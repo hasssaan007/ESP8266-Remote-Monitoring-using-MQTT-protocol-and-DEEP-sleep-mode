@@ -94,11 +94,12 @@ void setup_wifi() {
  WiFi.begin(ssid, password);
  
  while (WiFi.status() != WL_CONNECTED) {
- delay(500);
+ delay(500); 
  digitalWrite (Status, HIGH);
  delay(50);
  digitalWrite (Status, LOW);
  delay(50);
+
  Serial.print(".");
  }
  
@@ -107,7 +108,6 @@ void setup_wifi() {
  Serial.println("IP address: ");
  digitalWrite (Status, HIGH);
  Serial.println(WiFi.localIP());
-}
 
 //-------------------------------------------------------------------------------------------- 
 // Reconnet ESP Slave
