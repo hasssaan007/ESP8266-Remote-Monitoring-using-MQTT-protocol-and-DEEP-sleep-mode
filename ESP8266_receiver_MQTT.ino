@@ -196,5 +196,6 @@ void loop() {
  }
  
  client.loop();
- delay(10);
+ //Upload data to broker after every 5 mins
+ delay(5*60*1000);
  }
