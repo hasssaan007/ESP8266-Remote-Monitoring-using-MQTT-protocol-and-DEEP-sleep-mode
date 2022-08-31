@@ -34,6 +34,9 @@ uint8_t broadcastAddress[] = {0xF4,0xCF,0xA2,0xEF,0xBE,0xF6};
 //Create an object for DHT sensor
 DHT dht(DHTPin, DHTTYPE);
 
+//Gate of Mosfet
+#define gate 15
+
 //Create a Structure of information to be sent
 //Must match the receiver structure
 
@@ -125,6 +128,10 @@ void setup() {
 
   Serial.begin(115200); //Iniatialize Serial Monitor with 115200 baud rate
   dht.begin(); 
+ 
+  //Gate of Mosfet will be HIGH untill deep sleep mode 
+  pinMode (gate,OUTPUT);
+  digitalWrite (gate, HIGH);
 
   WiFi.mode(WIFI_STA); //Set Master as a Wi-Fi Station
 
