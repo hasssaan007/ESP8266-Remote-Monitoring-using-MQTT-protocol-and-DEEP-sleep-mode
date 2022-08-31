@@ -95,12 +95,17 @@ void setup_wifi() {
  
  while (WiFi.status() != WL_CONNECTED) {
  delay(500);
+ digitalWrite (Status, HIGH);
+ delay(50);
+ digitalWrite (Status, LOW);
+ delay(50);
  Serial.print(".");
  }
  
  Serial.println("");
  Serial.println("WiFi connected");
  Serial.println("IP address: ");
+ digitalWrite (Status, HIGH);
  Serial.println(WiFi.localIP());
 }
 
