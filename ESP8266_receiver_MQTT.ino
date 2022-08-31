@@ -108,6 +108,7 @@ void setup_wifi() {
  Serial.println("IP address: ");
  digitalWrite (Status, HIGH);
  Serial.println(WiFi.localIP());
+}
 
 //-------------------------------------------------------------------------------------------- 
 // Reconnet ESP Slave
